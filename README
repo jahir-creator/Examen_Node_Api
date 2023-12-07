@@ -1,0 +1,37 @@
+++++++++++++++PASOS PARA INSTALAR LA API CON NODE JS++++++++++++++++++++++++
+
+1.- Tener instalado Node JS v20.8.0
+
+2.- Descargar el Repositorio de Git Hub
+
+3.- Ingresar a la carpeta del proyecto descargado e ingresar a la carpeta con el nombre Node_Api
+
+4.- Dentro de la carpeta Node_Api abrimos una terminal  y ejecutamos el comando npm install para instalar todas las dependencias
+ 
+5.- Antes de iniciar el servidor creamos la base de datos en Mysql.
+
+++++++++++++++++++++Script Sql++++++++++++++++++++++++++++++++++++++++++++
+CREATE DATABASE api_node;
+SHOW DATABASES;
+USE api_node;
+SELECT DATABASE();
+
+
+CREATE TABLE blog(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(50) NOT NULL,
+    autor VARCHAR(100) NOT NULL,
+    fecha_publicacion DATE NOT NULL,
+    contenido TEXT NOT NULL
+);
+
+6.- Una vez creada la base de datos nos dirijimos a la carpeta de Node_api y dentro de esta creamos un archivo llamado .env y dentro de este colocamos las siguientes lineas
+
+	HOST=127.0.0.1
+	DATABASE=api_node
+	USER=
+	PASSWORD=
+
+en lo cual en el campo USER debera ir el usuario con que se inicio para crear la base de datos y en PASSWORD su contraseña correspondiente
+
+7.- Por ultimo solo ejecutamos en la terminal dentro de la carpeta Node_api el comando npm run dev y se estara ejecutando el servidor en el puerto 4000
